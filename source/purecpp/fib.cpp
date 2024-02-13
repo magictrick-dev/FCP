@@ -7,17 +7,6 @@
 #endif
 
 externable int
-fibonnaci(int n_index)
-{
-
-    if (n_index <= 2)
-        return 1;
-
-    return fibonnaci(n_index - 1) + fibonnaci(n_index - 2);
-
-}
-
-externable int
 fast_fibonnaci(int n_index)
 {
 
