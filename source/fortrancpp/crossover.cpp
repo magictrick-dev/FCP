@@ -3,15 +3,16 @@
 #else
 #   define externable extern "C"
 #endif
+#include <cstdint>
 
-extern "C" void fast_fibonacci_(int *n_index_in, int *fib_value_out);
+extern "C" void fast_fibonacci(int64_t *n_index_in, int64_t *fib_value_out);
 
-externable int
-fortran_fast_fibonacci(int n_index)
+externable int64_t
+fortran_fast_fibonacci(int64_t n_index)
 {
 
-    int value_out = 0;
-    fast_fibonacci_(&n_index, &value_out);
+    int64_t value_out = 0;
+    fast_fibonacci(&n_index, &value_out);
     return value_out;
 
 }
@@ -25,7 +26,7 @@ int main(int argc, char ** argv)
         return 0;
 
     int n_size = std::stoi(argv[1]);
-    int value = fortran_fast_fibonacci(n_size);
+    int64_t value = fortran_fast_fibonacci(n_size);
     std::cout << "Output: " << value << std::endl;
 
     return 0;
