@@ -6,8 +6,8 @@
 *
         SUBROUTINE FAST_FIBONACCI(N_INDEX, FIB_VALUE) BIND (C,
      *      NAME="fast_fibonacci")
-        INTEGER :: N_INDEX
-        INTEGER :: FIB_VALUE
+        INTEGER*8 :: N_INDEX
+        INTEGER*8 :: FIB_VALUE
         INTEGER*8 IARR(*)
         POINTER(IP,IARR)
         IP=MALLOC(N_INDEX*8)
